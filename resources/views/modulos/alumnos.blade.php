@@ -141,13 +141,8 @@
 
 </div>
 
-<?php
 
-$exp = explode('/', $_SERVER["REQUEST_URI"]);
-
-?>
-
-@if($exp[3] == "Editar-Alumno")
+@if(Route::is('alumnos.edit'))
 
 	<div class="modal fade" id="EditarAlumno">
 	

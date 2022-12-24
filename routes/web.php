@@ -34,12 +34,12 @@ Route::put('Mis-Datos', [UsuariosController::class, 'DatosUpdate']);
 Route::get('Usuarios', [UsuariosController::class, 'index']);
 Route::post('Usuarios', [UsuariosController::class, 'store']);
 Route::get('Usuario-Eliminado/{id}', [UsuariosController::class, 'destroy']);
-Route::get('Editar-Usuario/{id}', [UsuariosController::class, 'edit']);
+Route::get('Editar-Usuario/{id}', [UsuariosController::class, 'edit'])->name('usuarios.edit');
 Route::put('actualizar-Usuario/{id}', [UsuariosController::class, 'update']);
 
 Route::get('Alumnos', [AlumnosController::class, 'index']);
 Route::post('Alumnos', [AlumnosController::class, 'store']);
-Route::get('Editar-Alumno/{id}', [AlumnosController::class, 'edit']);
+Route::get('Editar-Alumno/{id}', [AlumnosController::class, 'edit'])->name('alumnos.edit');
 Route::put('actualizarA/{id}', [AlumnosController::class, 'update']);
 Route::get('Alumno-Eliminado/{id}', [AlumnosController::class, 'GeneroLibros']);
 Route::post('Crear-Prestamos', [AlumnosController::class, 'PrestamoAlumno']);
@@ -59,8 +59,8 @@ Route::get('Autor-Libros/{idAutor}', [AutoresController::class, 'AutorLibros']);
 
 Route::get('Libros', [LibroController::class, 'index']);
 Route::post('Libros', [LibroController::class, 'store']);
-Route::get('Libro-S/{id}', [LibroController::class, 'show']);
-Route::get('EditarLibro/{id}', [LibroController::class, 'edit']);
+Route::get('Libro-S/{id}', [LibroController::class, 'show'])->name('libros.show');
+Route::get('EditarLibro/{id}', [LibroController::class, 'edit'])->name('libros.edit');
 Route::put('Libro-Act/{id}', [LibroController::class, 'update']);
 Route::get('EliminarLibro/{id}', [LibroController::class, 'destroy']);
 

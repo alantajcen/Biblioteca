@@ -228,14 +228,7 @@
 	</div>
 </div>
 
-<?php 
-
-	$exp = explode("/", $_SERVER["REQUEST_URI"]);
-
-?>
-
-
-@if($exp[3] == "Libro-S")
+@if(Route::is('libros.show'))
 
 <div class="modal fade" id="resumen">
 	
@@ -255,7 +248,7 @@
 
 
 
-@elseif($exp[3] == "EditarLibro")
+@elseif(Route::is('libros.edit'))
 
 	<div class="modal fade" id="EditarL">
 		

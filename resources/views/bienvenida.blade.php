@@ -379,14 +379,9 @@ $('[data-mask]').inputmask();
 
 @endif
 
-<?php
 
-$exp = explode('/', $_SERVER["REQUEST_URI"]);
-$exp[3] = null;
 
-?>
-
-@if($exp[3] == 'Editar-Usuario')
+@if(Route::is('usuarios.edit'))
 
 <script type="text/javascript">
   
@@ -398,7 +393,7 @@ $exp[3] = null;
   
 </script>
 
-@elseif($exp[3] == 'Editar-Alumno')
+@elseif(Route::is('alumnos.edit'))
 
 <script type="text/javascript">
   
@@ -410,7 +405,7 @@ $exp[3] = null;
   
 </script>
 
-@elseif($exp[3] == 'Libro-S')
+@elseif(Route::is('libros.show'))
 
 <script type="text/javascript">
   
@@ -422,7 +417,7 @@ $exp[3] = null;
 
 </script>
 
-@elseif($exp[3] == 'EditarLibro')
+@elseif(Route::is('libros.edit'))
 
 <script type="text/javascript">
   
