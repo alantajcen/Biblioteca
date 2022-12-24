@@ -41,7 +41,7 @@ Route::get('Alumnos', [AlumnosController::class, 'index']);
 Route::post('Alumnos', [AlumnosController::class, 'store']);
 Route::get('Editar-Alumno/{id}', [AlumnosController::class, 'edit'])->name('alumnos.edit');
 Route::put('actualizarA/{id}', [AlumnosController::class, 'update']);
-Route::get('Alumno-Eliminado/{id}', [AlumnosController::class, 'GeneroLibros']);
+Route::get('Alumno-Eliminado/{id}', [AlumnosController::class, 'destroy']);
 Route::post('Crear-Prestamos', [AlumnosController::class, 'PrestamoAlumno']);
 
 
