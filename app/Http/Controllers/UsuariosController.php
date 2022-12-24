@@ -132,7 +132,6 @@ class UsuariosController extends Controller
         ]);
 
         Usuarios::create([
-
             'name'=>$datos["name"],
             'email'=>$datos["email"],
             'rol'=>$datos["rol"],
@@ -155,10 +154,9 @@ class UsuariosController extends Controller
         if(Storage::delete('public/'.$usuario->foto)){
 
             Storage::deleteDirectory('public/'.$exp[0].'/'.$exp[1]);
-
-            Usuarios::destroy($id);
-
         }
+
+        Usuarios::destroy($id);
 
         return redirect('Usuarios');
         
@@ -177,21 +175,24 @@ class UsuariosController extends Controller
 
         $usuario = Usuarios::find($id->id);
 
+        $id = $id->id;
+
         return view('modulos.Usuarios', compact('usuarios', 'usuario', 'id'));
     }
 
     
     public function update(Request $request,  $id)
     {
+        
         $usuario = Usuarios::find($id);
 
-        if($usuario["email"] != request('email')){
+        if($usuario["email"] != $request->input('email')){
             $datos = request()->validate([
 
                 'name'=>['required'],
                 'rol'=>['required'],
-                'email'=>['required', 'unique:users']
-            
+                'email'=>['required', 'unique:users'],
+                'password'=>[]
             ]);
         }else{
 
@@ -199,22 +200,23 @@ class UsuariosController extends Controller
 
                 'name'=>['required'],
                  'rol'=>['required'],
-                'email'=>['required', 'email']
+                'email'=>['required', 'email'],
+                'password'=>[]
 
             ]);
         }
 
-        if ($usuario["password"] != request('password')) {
-            
-            $clave = request("password");
-
-        }else{
-
-            $clave = $usuario["password"];
-
+        if (!empty($datos["password"]))  {
+            $datos["password"] = Hash::make($datos["password"]);
+        } else {
+            unset($datos["password"]);
         }
+        
 
-        DB::table('users')->where('id', $usuario["id"])->update(['name'=>$datos["name"], 'email'=> $datos["email"], 'rol'=>$datos["rol"], 'password'=>Hash::make($clave)]);
+        //return $datos;
+        DB::table('users')
+            ->where('id', $usuario["id"])
+            ->update($datos);
 
         return redirect('Usuarios');
     }

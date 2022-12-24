@@ -7,8 +7,19 @@
 	<section class="content-header">
 
 		<h1>Gestor de Usuarios</h1>
+		@if ($errors->any())
+			<div class="alert alert-danger">
+				<ul>
+					@foreach ($errors->all() as $error)
+						<li>{{ $error }}</li>
+					@endforeach
+				</ul>
+			</div>
+		@endif
 
 	</section>
+
+	
 
 	<section class="content">
 		
@@ -105,7 +116,7 @@
 
 		<div class="modal-content">
 
-		<form method="post" action="">
+		<form method="post" action="{{ route('usuarios.store') }}">
 
 			@csrf
 
@@ -121,8 +132,8 @@
 
 						<option value="">Seleccionar...</option>
 
-						<option value="Administrador">Administrador</option>
-						<option value="Alumno">Alumno</option>
+						<option value="Director">Director</option>
+						<option value="Maestro">Maestro</option>
 
 					</select>
 
@@ -175,7 +186,7 @@
 
 		<div class="modal-content">
 
-		<form method="post" action="{{ url('actualizar-Usuario/'.$id) }}">
+		<form method="post" action="{{ route('usuarios.update', $id) }}">
 
 			@csrf
 			@method('put')
@@ -188,12 +199,9 @@
 
 					<h2>TIPO DE USUARIO</h2>
 
-					<select class="form-control input-lg" name="rol" required="">	
-						
-						<option value="{{ $usuario->rol }}">{{ $usuario->rol }}</option>
-						<option value="Administrador">Administrador</option>
-						<option value="Alumno">Alumno</option>
-
+					<select class="form-control input-lg" name="rol" required="">
+						<option value="Director" {{ 'Director' == $usuario->rol ? 'selected' : ''; }}>Director</option>
+						<option value="Maestro" {{ 'Maestro' == $usuario->rol ? 'selected' : ''; }}>Maestro</option>
 					</select>
 
 				</div>

@@ -32,10 +32,10 @@ Route::get('Mis-Datos', [UsuariosController::class, 'MisDatos']);
 Route::put('Mis-Datos', [UsuariosController::class, 'DatosUpdate']);
 
 Route::get('Usuarios', [UsuariosController::class, 'index']);
-Route::post('Usuarios', [UsuariosController::class, 'store']);
+Route::post('Usuarios', [UsuariosController::class, 'store'])->name('usuarios.store');
 Route::get('Usuario-Eliminado/{id}', [UsuariosController::class, 'destroy']);
 Route::get('Editar-Usuario/{id}', [UsuariosController::class, 'edit'])->name('usuarios.edit');
-Route::put('actualizar-Usuario/{id}', [UsuariosController::class, 'update']);
+Route::put('actualizar-Usuario/{id}', [UsuariosController::class, 'update'])->name('usuarios.update');
 
 Route::get('Alumnos', [AlumnosController::class, 'index']);
 Route::post('Alumnos', [AlumnosController::class, 'store']);
