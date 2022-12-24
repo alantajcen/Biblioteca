@@ -175,7 +175,7 @@
 
 		<div class="modal-content">
 
-		<form method="post" action="{{ url('actualizar-Usuario/'.$exp[4]) }}">
+		<form method="post" action="{{ url('actualizar-Usuario/'.$id) }}">
 
 			@csrf
 			@method('put')

@@ -177,7 +177,7 @@ class UsuariosController extends Controller
 
         $usuario = Usuarios::find($id->id);
 
-        return view('modulos.Usuarios', compact('usuarios', 'usuario'));
+        return view('modulos.Usuarios', compact('usuarios', 'usuario', 'id'));
     }
 
     
