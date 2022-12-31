@@ -131,7 +131,7 @@ class UsuariosController extends Controller
             'password' => ['string', 'min:6']
         ]);
 
-        Usuarios::create([
+        $usuario = Usuarios::create([
             'name'=>$datos["name"],
             'email'=>$datos["email"],
             'rol'=>$datos["rol"],
@@ -140,6 +140,10 @@ class UsuariosController extends Controller
             'foto'=>''
 
         ]);
+
+        $rol = ("Director" == $datos["rol"]) ? "director" : "maestro";
+        $usuario->assignRole($rol);
+
 
         return redirect('Usuarios')->with('UsuarioCreado', 'ok'); 
     }
@@ -211,12 +215,21 @@ class UsuariosController extends Controller
         } else {
             unset($datos["password"]);
         }
+
+        $usuario->removeRole('Director');
+        $usuario->removeRole('maestro');
+
+        $rol = ("Director" == $datos["rol"]) ? "director" : "maestro";
+        $usuario->assignRole($rol);
         
 
         //return $datos;
-        DB::table('users')
+        $usuario = DB::table('users')
             ->where('id', $usuario["id"])
             ->update($datos);
+
+
+        
 
         return redirect('Usuarios');
     }
