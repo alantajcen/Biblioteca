@@ -26,8 +26,9 @@
 		<div class="box">
 
 			<div class="box-header">
-
-				<button class="btn btn-primary" data-toggle="modal" data-target="#CrearUsuario">Crear nuevo usuario</button>
+				@can('crear usuarios')
+					<button class="btn btn-primary" data-toggle="modal" data-target="#CrearUsuario">Crear nuevo usuario</button>
+				@endcan
 
 			</div>
 
@@ -81,17 +82,15 @@
 							<td>{{ $user->rol }}</td>
 
 							<td>
-								
-								<a href="{{ url('Editar-Usuario/'.$user->id) }}">
-
-
-								<button class="btn btn-primary"><i class="fa fa-edit"></i></button>
-									
-								</a>
-
-
-								<button class="btn btn-danger UsuarioEliminado" Uid="{{$user->id}}" Usuario="{{$user->name}}"><i class="fa fa-trash"></i></button>
-							</td>
+								@can('editar usuarios')
+									<a href="{{ url('Editar-Usuario/'.$user->id) }}">
+										<button class="btn btn-primary"><i class="fa fa-edit"></i></button>
+									</a>
+								@endcan
+								@can('eliminar usuarios')
+									<button class="btn btn-danger UsuarioEliminado" Uid="{{$user->id}}" Usuario="{{$user->name}}"><i class="fa fa-trash"></i></button>
+								@endcan
+								</td>
 
 
 						</tr>

@@ -105,14 +105,9 @@ class UsuariosController extends Controller
     }
 
 
-      public function index()
-
+    public function index()
     {
-        if(auth()->user()->rol != 'Administrador'){
-
-            return redirect('Inicio');
-
-        }
+       
 
         $usuarios = Usuarios::all();
 

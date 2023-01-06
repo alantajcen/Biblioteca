@@ -31,11 +31,14 @@ Route::get('Inicio',[InicioController::class, 'index']);
 Route::get('Mis-Datos', [UsuariosController::class, 'MisDatos']);
 Route::put('Mis-Datos', [UsuariosController::class, 'DatosUpdate']);
 
-Route::get('Usuarios', [UsuariosController::class, 'index']);
-Route::post('Usuarios', [UsuariosController::class, 'store'])->name('usuarios.store');
-Route::get('Usuario-Eliminado/{id}', [UsuariosController::class, 'destroy']);
-Route::get('Editar-Usuario/{id}', [UsuariosController::class, 'edit'])->name('usuarios.edit');
-Route::put('actualizar-Usuario/{id}', [UsuariosController::class, 'update'])->name('usuarios.update');
+
+Route::get('Usuarios', [UsuariosController::class, 'index'])->middleware(['can:listar usuarios']);
+Route::post('Usuarios', [UsuariosController::class, 'store'])->name('usuarios.store')->middleware(['can:crear usuarios']);
+Route::get('Usuario-Eliminado/{id}', [UsuariosController::class, 'destroy'])->middleware(['can:eliminar usuarios']);
+Route::get('Editar-Usuario/{id}', [UsuariosController::class, 'edit'])->name('usuarios.edit')->middleware(['can:editar usuarioss']);
+Route::put('actualizar-Usuario/{id}', [UsuariosController::class, 'update'])->name('usuarios.update')->middleware(['can:editar usuarios']);
+
+
 
 Route::get('Alumnos', [AlumnosController::class, 'index']);
 Route::post('Alumnos', [AlumnosController::class, 'store']);
