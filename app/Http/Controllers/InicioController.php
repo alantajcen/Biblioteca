@@ -24,7 +24,7 @@ class InicioController extends Controller
         $alumnos = Alumnos::all();
         $usuarios = Usuarios::all();
 
-        return view('modulos.Inicio', compact('prestamos', 'libros', 'alumnos', 'usuarios'));
+        return view('modulos.inicio', compact('prestamos', 'libros', 'alumnos', 'usuarios'));
     }
 
    

@@ -21,7 +21,7 @@ use App\Http\Controllers\PrestamosController;
 */
 
 Route::get('/', function () {
-    return view('modulos.Ingresar');
+    return view('modulos.ingresar');
 });
 
 Auth::routes();
