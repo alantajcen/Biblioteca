@@ -110,7 +110,7 @@ CREATE TABLE `generos` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` text COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -119,7 +119,7 @@ CREATE TABLE `generos` (
 
 LOCK TABLES `generos` WRITE;
 /*!40000 ALTER TABLE `generos` DISABLE KEYS */;
-INSERT INTO `generos` VALUES (1,'Terror'),(2,'Biología'),(4,'Aventura'),(5,'Drama'),(6,'Cuentos'),(7,'Biografios'),(8,'Ciencia Ficción'),(9,'Novela'),(10,'Misterio y Aventura');
+INSERT INTO `generos` VALUES (1,'Terror'),(2,'Biología'),(4,'Aventura'),(5,'Drama'),(6,'Cuentos'),(7,'Biografios'),(8,'Ciencia Ficción'),(9,'Novela'),(10,'Misterio y Aventura'),(11,'deasd');
 /*!40000 ALTER TABLE `generos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -150,7 +150,7 @@ CREATE TABLE `libros` (
 
 LOCK TABLES `libros` WRITE;
 /*!40000 ALTER TABLE `libros` DISABLE KEYS */;
-INSERT INTO `libros` VALUES (1,6,4,'Las Batallas en el Decierto','Preparándose para una visita de un potencial cliente del tío Vernon, los Dursley confinan a Harry Potter en su habitación. Sin embargo este recibe la visita inesperada de Dobby, un elfo doméstico, que le advierte que no debe regresar a Hogwarts, ya que ahora el lugar no es seguro. Debido a la negativa de Harry, Dobby arruina la cena haciendo que los tíos culparan a Harry. Este incidente fuerza al tío Vernon a encerrar a Harry en su cuarto para que no pueda volver al colegio. Ron, Fred y George Weasley llegan en un volador Ford Anglia celeste 1967, rescatan a Harry y lo llevan a La Madriguera. Harry conoce a la hermana menor de Ron, Ginny, que se sorprende al verlo debido a que le gusta. Esta empieza su primer año en Hogwarts. También conoce al padre de Ron, Arthur Weasley.>','Español','12/09/2007','Libros/QAfmElcew0RpM3lhwedjJOwadWgXFN0GCAsZWzek.jpg','10'),(2,8,1,'Harry Potter y la cámara secreta','Harry Potter y la cámara secreta (título original en inglés, Harry Potter and the Chamber of Secrets) es una película de género fantástico, dirigida por Chris Columbus y distruibuida por Warner Bros. Pictures; está basada en la novela homónima de J. K. Rowling. Es el segundo largometraje de la saga de películas de Harry Potter y de la franquicia Wizarding World, y fue escrito por Steve Kloves y producido por David Heyman. Fue la última película que hizo actor Richard Harris (Álbus Dumbledore) antes de fallecer el mismo año que se estrenó la película.>>','Español','12/09/2022','Libros/RpYA7enJXsRrVB9dsbwCAS3IMXdMnIxrJUnkJkLl.jpg','3'),(3,4,1,'Harry Potter y la Piedra Filosofal','Harry Potter y la piedra filosofal (título original en inglés, Harry Potter and the Philosopher\'s Stone, titulada Harry Potter and the Sorcerer\'s Stone en Estados Unidos e India)3​ es una película británica-estadounidense de fantasía y aventuras basada en el libro homónimo de J. K. Rowling, dirigida por el cineasta Chris Columbus y estrenada en 2001. La historia sigue a Harry Potter, un niño que al cumplir once años descubre que es un mago, por lo cual es enviado al Colegio Hogwarts de Magia y Hechicería para comenzar su entrenamiento como tal.\r\n\r\nEsta película marca el inicio de la saga de películas de Harry Potter que se extendió hasta 2011, con el estreno de Harry Potter y las reliquias de la Muerte: parte 2; así como también es el comienzo del universo cinematográfico del mundo mágico, que para 2022 suma un total de once películas.','Ingles','02/06/2001','Libros/EETb0EI6wr8HycNWWKnuASo5740KSbJtNPuefZ6v.jpg','2'),(4,5,2,'I\'m Glad My Mom Died','I\'m Glad My Mom Died es un libro de memorias escrito por la actriz y cantante estadounidense, Jennette McCurdy, en el que habla sobre su carrera como actriz infantil y su difícil relación con su madre abusiva que murió en 2013. Es el primer libro de McCurdy y se publicó el 9 de agosto de 2022 por Simon & Schuster','Español','12/10/2022','Libros/TlwYCyVejGcbkzLL6Cs1eSz2uLS8zNgXV92GNTEB.jpg','2'),(5,4,6,'El Principito','‘El Principito’ es la obra cumbre del conde Antoine de Saint-Exupéry, que narra el encuentro entre un piloto que está varado en el desierto por una avería de su avión y un niño, un príncipe, dueño de un diminuto planeta que tiene tres volcanes miniatura, uno extinguido y que usa como asiento, pero que limpia a diario porque no se sabe cuándo puede volver a tener actividad y si está limpio, no causará mayor daño.','Español','12/09/1998','Libros/uavaFrJjrCB23bWEWYfWYVri4ImmFEd2shza1Acs.jpg','7'),(6,10,6,'Talpa','lhghb mlsb m b','Español','12/12/2000','Libros/nKsMUgsk9rNhPocSO6Vwimws1HugC9bYG1xSQN69.jpg','0'),(7,6,6,'Alicia en el País de las Maravillas','Las aventuras de Alicia en el país de las maravillas, comúnmente abreviado como Alicia en el país de las maravillas, es una novela de fantasía escrita por el matemático, lógico, fotógrafo y escritor británico Charles Lutwidge Dodgson, bajo el seudónimo de Lewis Carroll, publicada en 1865. La historia cuenta cómo una niña llamada Alicia cae por un agujero, encontrándose en un mundo peculiar y extraño, poblado por humanos y criaturas antropomórficas. El libro juega con la lógica, dando a la novela gran popularidad tanto en niños como en adultos. Está considerada una de las mejores novelas del género del Sinsentido. Su narrativa y estructura, junto con sus personajes, han sido una gran influencia tanto en la cultura popular como en la literatura, sobre todo en el género fantástico.','Español','09/05/1980','Libros/wYuoKGViZW939klvm92yxB6ZP4pW3gvdBjE1KhqY.jpg','3');
+INSERT INTO `libros` VALUES (1,6,4,'Las Batallas en el Decierto','Preparándose para una visita de un potencial cliente del tío Vernon, los Dursley confinan a Harry Potter en su habitación. Sin embargo este recibe la visita inesperada de Dobby, un elfo doméstico, que le advierte que no debe regresar a Hogwarts, ya que ahora el lugar no es seguro. Debido a la negativa de Harry, Dobby arruina la cena haciendo que los tíos culparan a Harry. Este incidente fuerza al tío Vernon a encerrar a Harry en su cuarto para que no pueda volver al colegio. Ron, Fred y George Weasley llegan en un volador Ford Anglia celeste 1967, rescatan a Harry y lo llevan a La Madriguera. Harry conoce a la hermana menor de Ron, Ginny, que se sorprende al verlo debido a que le gusta. Esta empieza su primer año en Hogwarts. También conoce al padre de Ron, Arthur Weasley.>','Español','12/09/2007','Libros/QAfmElcew0RpM3lhwedjJOwadWgXFN0GCAsZWzek.jpg','10'),(2,8,1,'Harry Potter y la cámara secreta','Harry Potter y la cámara secreta (título original en inglés, Harry Potter and the Chamber of Secrets) es una película de género fantástico, dirigida por Chris Columbus y distruibuida por Warner Bros. Pictures; está basada en la novela homónima de J. K. Rowling. Es el segundo largometraje de la saga de películas de Harry Potter y de la franquicia Wizarding World, y fue escrito por Steve Kloves y producido por David Heyman. Fue la última película que hizo actor Richard Harris (Álbus Dumbledore) antes de fallecer el mismo año que se estrenó la película.>>','Español','12/09/2022','Libros/RpYA7enJXsRrVB9dsbwCAS3IMXdMnIxrJUnkJkLl.jpg','3'),(3,4,1,'Harry Potter y la Piedra Filosofal','Harry Potter y la piedra filosofal (título original en inglés, Harry Potter and the Philosopher\'s Stone, titulada Harry Potter and the Sorcerer\'s Stone en Estados Unidos e India)3​ es una película británica-estadounidense de fantasía y aventuras basada en el libro homónimo de J. K. Rowling, dirigida por el cineasta Chris Columbus y estrenada en 2001. La historia sigue a Harry Potter, un niño que al cumplir once años descubre que es un mago, por lo cual es enviado al Colegio Hogwarts de Magia y Hechicería para comenzar su entrenamiento como tal.\r\n\r\nEsta película marca el inicio de la saga de películas de Harry Potter que se extendió hasta 2011, con el estreno de Harry Potter y las reliquias de la Muerte: parte 2; así como también es el comienzo del universo cinematográfico del mundo mágico, que para 2022 suma un total de once películas.','Ingles','02/06/2001','Libros/EETb0EI6wr8HycNWWKnuASo5740KSbJtNPuefZ6v.jpg','2'),(4,5,2,'I\'m Glad My Mom Died','I\'m Glad My Mom Died es un libro de memorias escrito por la actriz y cantante estadounidense, Jennette McCurdy, en el que habla sobre su carrera como actriz infantil y su difícil relación con su madre abusiva que murió en 2013. Es el primer libro de McCurdy y se publicó el 9 de agosto de 2022 por Simon & Schuster','Español','12/10/2022','Libros/TlwYCyVejGcbkzLL6Cs1eSz2uLS8zNgXV92GNTEB.jpg','2'),(5,4,6,'El Principito','‘El Principito’ es la obra cumbre del conde Antoine de Saint-Exupéry, que narra el encuentro entre un piloto que está varado en el desierto por una avería de su avión y un niño, un príncipe, dueño de un diminuto planeta que tiene tres volcanes miniatura, uno extinguido y que usa como asiento, pero que limpia a diario porque no se sabe cuándo puede volver a tener actividad y si está limpio, no causará mayor daño.','Español','12/09/1998','Libros/uavaFrJjrCB23bWEWYfWYVri4ImmFEd2shza1Acs.jpg','4'),(6,10,6,'Talpa','lhghb mlsb m b','Español','12/12/2000','Libros/nKsMUgsk9rNhPocSO6Vwimws1HugC9bYG1xSQN69.jpg','0'),(7,6,6,'Alicia en el País de las Maravillas','Las aventuras de Alicia en el país de las maravillas, comúnmente abreviado como Alicia en el país de las maravillas, es una novela de fantasía escrita por el matemático, lógico, fotógrafo y escritor británico Charles Lutwidge Dodgson, bajo el seudónimo de Lewis Carroll, publicada en 1865. La historia cuenta cómo una niña llamada Alicia cae por un agujero, encontrándose en un mundo peculiar y extraño, poblado por humanos y criaturas antropomórficas. El libro juega con la lógica, dando a la novela gran popularidad tanto en niños como en adultos. Está considerada una de las mejores novelas del género del Sinsentido. Su narrativa y estructura, junto con sus personajes, han sido una gran influencia tanto en la cultura popular como en la literatura, sobre todo en el género fantástico.','Español','09/05/1980','Libros/wYuoKGViZW939klvm92yxB6ZP4pW3gvdBjE1KhqY.jpg','0');
 /*!40000 ALTER TABLE `libros` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -228,7 +228,7 @@ CREATE TABLE `model_has_roles` (
 
 LOCK TABLES `model_has_roles` WRITE;
 /*!40000 ALTER TABLE `model_has_roles` DISABLE KEYS */;
-INSERT INTO `model_has_roles` VALUES (1,'App\\Models\\User',1);
+INSERT INTO `model_has_roles` VALUES (1,'App\\Models\\User',1),(2,'App\\Models\\User',2),(1,'App\\Models\\User',3);
 /*!40000 ALTER TABLE `model_has_roles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -271,7 +271,7 @@ CREATE TABLE `permissions` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `permissions_name_guard_name_unique` (`name`,`guard_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -280,7 +280,7 @@ CREATE TABLE `permissions` (
 
 LOCK TABLES `permissions` WRITE;
 /*!40000 ALTER TABLE `permissions` DISABLE KEYS */;
-INSERT INTO `permissions` VALUES (1,'listar usuarios','web','2023-01-06 04:16:26','2023-01-06 04:16:26'),(2,'crear usuarios','web','2023-01-06 04:16:26','2023-01-06 04:16:26'),(3,'eliminar usuarios','web','2023-01-06 04:16:26','2023-01-06 04:16:26'),(4,'editar usuarios','web','2023-01-06 04:16:26','2023-01-06 04:16:26'),(5,'listar alumnos','web','2023-01-06 04:16:26','2023-01-06 04:16:26'),(6,'crear alumnos','web','2023-01-06 04:16:26','2023-01-06 04:16:26'),(7,'eliminar alumnos','web','2023-01-06 04:16:26','2023-01-06 04:16:26'),(8,'editar alumnos','web','2023-01-06 04:16:26','2023-01-06 04:16:26'),(9,'listar generos','web','2023-01-06 04:16:26','2023-01-06 04:16:26'),(10,'crear generos','web','2023-01-06 04:16:26','2023-01-06 04:16:26'),(11,'eliminar generos','web','2023-01-06 04:16:26','2023-01-06 04:16:26'),(12,'editar generos','web','2023-01-06 04:16:27','2023-01-06 04:16:27'),(13,'listar autores','web','2023-01-06 04:16:27','2023-01-06 04:16:27'),(14,'crear autores','web','2023-01-06 04:16:27','2023-01-06 04:16:27'),(15,'eliminar autores','web','2023-01-06 04:16:27','2023-01-06 04:16:27'),(16,'editar autores','web','2023-01-06 04:16:27','2023-01-06 04:16:27'),(17,'listar libros','web','2023-01-06 04:16:27','2023-01-06 04:16:27'),(18,'crear libros','web','2023-01-06 04:16:27','2023-01-06 04:16:27'),(19,'eliminar libros','web','2023-01-06 04:16:27','2023-01-06 04:16:27'),(20,'editar libros','web','2023-01-06 04:16:27','2023-01-06 04:16:27'),(21,'gestionar prestamos','web','2023-01-06 04:16:27','2023-01-06 04:16:27'),(22,'finalizar prestamos','web','2023-01-06 04:16:27','2023-01-06 04:16:27');
+INSERT INTO `permissions` VALUES (1,'listar usuarios','web','2023-01-06 04:16:26','2023-01-06 04:16:26'),(2,'crear usuarios','web','2023-01-06 04:16:26','2023-01-06 04:16:26'),(3,'eliminar usuarios','web','2023-01-06 04:16:26','2023-01-06 04:16:26'),(4,'editar usuarios','web','2023-01-06 04:16:26','2023-01-06 04:16:26'),(5,'listar alumnos','web','2023-01-06 04:16:26','2023-01-06 04:16:26'),(6,'crear alumnos','web','2023-01-06 04:16:26','2023-01-06 04:16:26'),(7,'eliminar alumnos','web','2023-01-06 04:16:26','2023-01-06 04:16:26'),(8,'editar alumnos','web','2023-01-06 04:16:26','2023-01-06 04:16:26'),(9,'listar generos','web','2023-01-06 04:16:26','2023-01-06 04:16:26'),(10,'crear generos','web','2023-01-06 04:16:26','2023-01-06 04:16:26'),(11,'eliminar generos','web','2023-01-06 04:16:26','2023-01-06 04:16:26'),(12,'editar generos','web','2023-01-06 04:16:27','2023-01-06 04:16:27'),(13,'listar autores','web','2023-01-06 04:16:27','2023-01-06 04:16:27'),(14,'crear autores','web','2023-01-06 04:16:27','2023-01-06 04:16:27'),(15,'eliminar autores','web','2023-01-06 04:16:27','2023-01-06 04:16:27'),(16,'editar autores','web','2023-01-06 04:16:27','2023-01-06 04:16:27'),(17,'listar libros','web','2023-01-06 04:16:27','2023-01-06 04:16:27'),(18,'crear libros','web','2023-01-06 04:16:27','2023-01-06 04:16:27'),(19,'eliminar libros','web','2023-01-06 04:16:27','2023-01-06 04:16:27'),(20,'editar libros','web','2023-01-06 04:16:27','2023-01-06 04:16:27'),(21,'gestionar prestamos','web','2023-01-06 04:16:27','2023-01-06 04:16:27'),(22,'finalizar prestamos','web','2023-01-06 04:16:27','2023-01-06 04:16:27'),(23,'crear prestamos','web','2023-01-08 02:24:39','2023-01-08 02:24:39'),(24,'ver prestamos','web','2023-01-08 02:24:39','2023-01-08 02:24:39');
 /*!40000 ALTER TABLE `permissions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -296,7 +296,7 @@ CREATE TABLE `prestamo` (
   `id_prestamo` int(11) NOT NULL,
   `id_libro` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -305,7 +305,7 @@ CREATE TABLE `prestamo` (
 
 LOCK TABLES `prestamo` WRITE;
 /*!40000 ALTER TABLE `prestamo` DISABLE KEYS */;
-INSERT INTO `prestamo` VALUES (1,1,1),(3,3,2),(4,2,3),(5,2,4),(6,4,2),(7,5,1),(8,3,4),(9,6,5),(10,3,4),(11,7,1),(12,8,5),(13,9,6),(14,11,6),(15,12,2);
+INSERT INTO `prestamo` VALUES (1,1,1),(3,3,2),(4,2,3),(5,2,4),(6,4,2),(7,5,1),(8,3,4),(9,6,5),(10,3,4),(11,7,1),(12,8,5),(13,9,6),(14,11,6),(15,12,2),(16,13,7),(17,13,7),(18,13,7),(19,13,5),(20,13,5),(21,13,5);
 /*!40000 ALTER TABLE `prestamo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -322,8 +322,9 @@ CREATE TABLE `prestamos` (
   `id_maestro` int(11) NOT NULL,
   `estado` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `fecha` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fecha_fin` text COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -332,7 +333,7 @@ CREATE TABLE `prestamos` (
 
 LOCK TABLES `prestamos` WRITE;
 /*!40000 ALTER TABLE `prestamos` DISABLE KEYS */;
-INSERT INTO `prestamos` VALUES (1,1,1,'Finalizado','02/12/2022 - 15:21'),(2,3,1,'Finalizado','02/12/2022 - 15:37'),(3,4,1,'Finalizado','02/12/2022 - 15:38'),(4,1,1,'Finalizado','02/12/2022 - 17:41'),(5,5,1,'Finalizado','05/12/2022 - 10:24'),(6,6,1,'Finalizado','06/12/2022 - 09:53'),(7,5,1,'Finalizado','12/12/2022 - 10:20'),(8,5,1,'Finalizado','13/12/2022 - 20:06'),(9,4,1,'Creado','13/12/2022 - 20:07'),(10,6,1,'Creado','13/12/2022 - 20:07'),(11,1,1,'Creado','21/12/2022 - 02:01'),(12,3,1,'Finalizado','21/12/2022 - 08:38');
+INSERT INTO `prestamos` VALUES (1,1,1,'Finalizado','02/12/2022 - 15:21',''),(2,3,1,'Finalizado','02/12/2022 - 15:37',''),(3,4,1,'Finalizado','02/12/2022 - 15:38',''),(4,1,1,'Finalizado','02/12/2022 - 17:41',''),(5,5,1,'Finalizado','05/12/2022 - 10:24',''),(6,6,1,'Finalizado','06/12/2022 - 09:53',''),(7,5,1,'Finalizado','12/12/2022 - 10:20',''),(8,5,1,'Finalizado','13/12/2022 - 20:06',''),(9,4,1,'Creado','13/12/2022 - 20:07',''),(10,6,1,'Creado','13/12/2022 - 20:07',''),(11,1,1,'Creado','21/12/2022 - 02:01',''),(12,3,1,'Finalizado','21/12/2022 - 08:38',''),(13,1,2,'Finalizado','07/01/2023 - 20:32','08/01/2023 - 02:51');
 /*!40000 ALTER TABLE `prestamos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -359,7 +360,7 @@ CREATE TABLE `role_has_permissions` (
 
 LOCK TABLES `role_has_permissions` WRITE;
 /*!40000 ALTER TABLE `role_has_permissions` DISABLE KEYS */;
-INSERT INTO `role_has_permissions` VALUES (1,1),(2,1),(3,1),(4,1),(5,1),(6,1),(7,1),(8,1),(9,1),(10,1),(11,1),(12,1),(13,1),(14,1),(15,1),(16,1),(17,1),(18,1),(19,1),(20,1),(21,1),(22,1),(1,2),(5,2),(8,2),(9,2),(10,2),(13,2),(14,2),(15,2),(16,2),(17,2),(18,2),(21,2),(22,2);
+INSERT INTO `role_has_permissions` VALUES (1,1),(2,1),(3,1),(4,1),(5,1),(6,1),(7,1),(8,1),(9,1),(10,1),(11,1),(12,1),(13,1),(14,1),(15,1),(16,1),(17,1),(18,1),(19,1),(20,1),(21,1),(22,1),(23,1),(24,1),(1,2),(5,2),(8,2),(9,2),(10,2),(13,2),(14,2),(15,2),(16,2),(17,2),(18,2),(21,2),(22,2),(23,2),(24,2);
 /*!40000 ALTER TABLE `role_has_permissions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -412,7 +413,7 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -421,7 +422,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Alan Tajcen Rsm','alanrsm18@gmail.com',NULL,'$2y$10$UEEr/S/VA0uI28BHsEJ2uOuSFYSrb9rlgVJhrui8N7QkA6DK7Q9FC','Administrador','17610111UTGZ','Usuarios/Alan Tajcen Rsm/C3TS03lMuEnJgAIKy8BvdIVJXmDVBLD7DLQqblZ3.jpg',NULL,'2022-09-27 09:50:02','2022-09-27 09:50:02'),(3,'Yael Alexander','yael_19@gmail.com',NULL,'$2y$10$eXwRhquhAutTtNWKgtO6HO41UKHXMRC1OfJBehEYx02o1qLdmvfdi','Administrador','','',NULL,'2022-10-03 04:53:01','2022-10-03 04:53:01'),(7,'ALAN TAJCEN RAMOS SAN MARTIN','prueba@gmail.com',NULL,'$2y$10$Z2RJpMvW0wWN4tLelfJcz.4kZSdKz6N6bXcM84APz0/2vEOzjnXJC','Alumno','','',NULL,'2022-10-06 04:33:32','2022-10-06 04:33:32'),(10,'Sergio','verificacion@hoy.lucetornasol.com',NULL,'$2y$10$3GV9m9ZVZYCtFLcOoZsSM.hJOisPFkCVjtH7y1m7em6Q0wrkqXGhq','Alumno','','',NULL,'2022-12-06 14:18:43','2022-12-06 14:18:43'),(11,'Usuario de Prueba','user_prueba@gmail.com',NULL,'$2y$10$dMYKcVUghec.cXHe3RA7kux4d2Px8X/PeRpDg0UOH9ONTjlTj0LAq','Administrador','','',NULL,'2022-12-12 05:32:34','2022-12-12 05:32:34');
+INSERT INTO `users` VALUES (1,'Alan Tajcen Rsm','alanrsm18@gmail.com',NULL,'$2y$10$UEEr/S/VA0uI28BHsEJ2uOuSFYSrb9rlgVJhrui8N7QkA6DK7Q9FC','Director','17610111UTGZ','Usuarios/Alan Tajcen Rsm/C3TS03lMuEnJgAIKy8BvdIVJXmDVBLD7DLQqblZ3.jpg',NULL,'2022-09-27 09:50:02','2022-09-27 09:50:02'),(2,'Ivan Hernandez Lopez','van.m285@gmail.com',NULL,'$2y$10$X72os77QOsknxrh9K9w3VO2x4HhEwxn1OMab1mCVlqOGonPtM2rrC','Maestro','','',NULL,'2023-01-08 00:45:28','2023-01-08 00:45:28'),(3,'Director','admin@gmail.com',NULL,'$2y$10$6IFXmp.NwVj91AbjW3b8rOFi3glNLEfYVn7YpUyCP9U4DkhJ/ZxG2','Director','','',NULL,'2023-01-08 01:37:35','2023-01-08 01:37:35');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -434,4 +435,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-06  4:56:01
+-- Dump completed on 2023-01-08  2:59:51
