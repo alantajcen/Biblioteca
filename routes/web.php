@@ -35,38 +35,41 @@ Route::put('Mis-Datos', [UsuariosController::class, 'DatosUpdate']);
 Route::get('Usuarios', [UsuariosController::class, 'index'])->middleware(['can:listar usuarios']);
 Route::post('Usuarios', [UsuariosController::class, 'store'])->name('usuarios.store')->middleware(['can:crear usuarios']);
 Route::get('Usuario-Eliminado/{id}', [UsuariosController::class, 'destroy'])->middleware(['can:eliminar usuarios']);
-Route::get('Editar-Usuario/{id}', [UsuariosController::class, 'edit'])->name('usuarios.edit')->middleware(['can:editar usuarioss']);
+Route::get('Editar-Usuario/{id}', [UsuariosController::class, 'edit'])->name('usuarios.edit')->middleware(['can:editar usuarios']);
 Route::put('actualizar-Usuario/{id}', [UsuariosController::class, 'update'])->name('usuarios.update')->middleware(['can:editar usuarios']);
 
 
 
-Route::get('Alumnos', [AlumnosController::class, 'index']);
-Route::post('Alumnos', [AlumnosController::class, 'store']);
-Route::get('Editar-Alumno/{id}', [AlumnosController::class, 'edit'])->name('alumnos.edit');
-Route::put('actualizarA/{id}', [AlumnosController::class, 'update']);
-Route::get('Alumno-Eliminado/{id}', [AlumnosController::class, 'destroy']);
+Route::get('Alumnos', [AlumnosController::class, 'index'])->middleware(['can:listar alumnos']);
+Route::post('Alumnos', [AlumnosController::class, 'store'])->middleware(['can:crear alumnos']);
+Route::get('Editar-Alumno/{id}', [AlumnosController::class, 'edit'])->name('alumnos.edit')->middleware(['can:editar alumnos']);
+Route::put('actualizarA/{id}', [AlumnosController::class, 'update'])->middleware(['can:editar alumnos']);
+Route::get('Alumno-Eliminado/{id}', [AlumnosController::class, 'destroy'])->middleware(['can:eliminar alumnos']);
+
+Route::get('Generos', [GeneroController::class, 'index'])->middleware(['can:listar generos']);
+Route::post('Generos', [GeneroController::class, 'store'])->middleware(['can:crear generos']);
+Route::put('Actualizar-Genero/{genero}', [GeneroController::class, 'update'])->middleware(['can:actualizar generos']);
+Route::get('Genero-Eliminado/{id}', [GeneroController::class, 'destroy'])->middleware(['can:actualizar generos']);
+Route::get('Genero-Libros/{idGenero}', [GeneroController::class, 'GeneroLibros']); // generos
+
+Route::get('Autores', [AutoresController::class, 'index'])->middleware(['can:listar autores']);
+Route::get('Agregar-Autor', [AutoresController::class, 'create'])->middleware(['can:crear autores']);
+Route::post('Agregar-Autor', [AutoresController::class, 'store'])->middleware(['can:agregar autores']);
+Route::delete('Autor-Eliminado/{autor}', [AutoresController::class, 'destroy'])->middleware(['can:eliminar autores']);
+Route::get('Autor-Libros/{idAutor}', [AutoresController::class, 'AutorLibros']); // autores
+
+Route::get('Libros', [LibroController::class, 'index'])->middleware(['can:listar libros']);
+Route::post('Libros', [LibroController::class, 'store'])->middleware(['can:crear libros']);
+Route::get('Libro-S/{id}', [LibroController::class, 'show'])->name('libros.show'); // libros
+Route::get('EditarLibro/{id}', [LibroController::class, 'edit'])->name('libros.edit')->middleware(['can:editar libros']);
+Route::put('Libro-Act/{id}', [LibroController::class, 'update'])->middleware(['can:editar libros']);
+Route::get('EliminarLibro/{id}', [LibroController::class, 'destroy'])->middleware(['can:eliminar libros']);
+
+
+
+
+
 Route::post('Crear-Prestamos', [AlumnosController::class, 'PrestamoAlumno']);
-
-
-Route::get('Generos', [GeneroController::class, 'index']);
-Route::post('Generos', [GeneroController::class, 'store']);
-Route::put('Actualizar-Genero/{genero}', [GeneroController::class, 'update']);
-Route::get('Genero-Eliminado/{id}', [GeneroController::class, 'destroy']);
-Route::get('Genero-Libros/{idGenero}', [GeneroController::class, 'GeneroLibros']);
-
-Route::get('Autores', [AutoresController::class, 'index']);
-Route::get('Agregar-Autor', [AutoresController::class, 'create']);
-Route::post('Agregar-Autor', [AutoresController::class, 'store']);
-Route::delete('Autor-Eliminado/{autor}', [AutoresController::class, 'destroy']);
-Route::get('Autor-Libros/{idAutor}', [AutoresController::class, 'AutorLibros']);
-
-Route::get('Libros', [LibroController::class, 'index']);
-Route::post('Libros', [LibroController::class, 'store']);
-Route::get('Libro-S/{id}', [LibroController::class, 'show'])->name('libros.show');
-Route::get('EditarLibro/{id}', [LibroController::class, 'edit'])->name('libros.edit');
-Route::put('Libro-Act/{id}', [LibroController::class, 'update']);
-Route::get('EliminarLibro/{id}', [LibroController::class, 'destroy']);
-
 Route::get('Crear-Prestamos', [PrestamosController::class, 'create']);
 Route::post('Crear-Prestamos', [PrestamosController::class, 'store']);
 Route::get('Prestamo/{id}', [PrestamosController::class, 'venta']);
