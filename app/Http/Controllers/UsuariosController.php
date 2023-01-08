@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Usuarios;
+use App\Models\User as Usuarios;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+
+
 
 class UsuariosController extends Controller
 {
@@ -107,7 +110,9 @@ class UsuariosController extends Controller
 
     public function index()
     {
-       
+       //$user = Auth::user();
+
+        //$user = Usuarios::find(2); print_r($user->hasPermissionTo('listar usuarios')); die;
 
         $usuarios = Usuarios::all();
 
@@ -165,10 +170,6 @@ class UsuariosController extends Controller
  
     public function edit(Usuarios $id)
     {
-        if(auth()->user()->rol != 'Administrador'){
-
-            return redirect('Inicio');
-        }
 
         $usuarios = Usuarios::all();
 

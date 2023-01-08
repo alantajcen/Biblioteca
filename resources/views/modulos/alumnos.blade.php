@@ -7,6 +7,15 @@
 	<section class="content-header">
 
 		<h1>Gestor de alumnos</h1>
+		@if ($errors->any())
+			<div class="alert alert-danger">
+				<ul>
+					@foreach ($errors->all() as $error)
+						<li>{{ $error }}</li>
+					@endforeach
+				</ul>
+			</div>
+		@endif
 
 	</section>
 
@@ -15,8 +24,9 @@
 		<div class="box">
 
 			<div class="box-header">
-				<button class="btn btn-primary" data-toggle="modal" data-target="#CrearAlumno">Nuevo Alumno</button>
-				
+				@can('crear alumnos')
+					<button class="btn btn-primary" data-toggle="modal" data-target="#CrearAlumno">Nuevo Alumno</button>
+				@endcan
 			</div>
 
 			<div class="box-body">
@@ -49,12 +59,15 @@
 								<td>{{ $alumno->direccion}}</td>
 								<td>{{ $alumno->telefono}}</td>
 								<td>
-										<a href="{{ url('Editar-Alumno/'.$alumno->id) }}">
+									@can('editar alumnos')
+									<a href="{{ url('Editar-Alumno/'.$alumno->id) }}">
 
-											<button class="btn btn-success"><i class="fa fa-edit"></i></button>
-										</a>
-
+										<button class="btn btn-success"><i class="fa fa-edit"></i></button>
+									</a>
+									@endcan
+									@can('eliminar alumnos')
 									<button class="btn btn-danger AlumnoEliminado" Aid="{{$alumno->id}}" Alumno="{{ $alumno->nombre }}"><i class="fa fa-trash"></i></button>
+									@endcan
 								</td>
 
 							</tr>
