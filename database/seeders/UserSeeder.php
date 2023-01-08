@@ -63,9 +63,34 @@ class UserSeeder extends Seeder
 
         }*/
 
-        $user = User::find(1);
+        //$user = User::find(1);
 
-        $user->assignRole(['director']);
+        //$user->assignRole(['director']);
+
+
+
+
+
+
+        /*$director = Role::find(1);
+        $maestro = Role::find(2);
+
+        $permissions = [
+            "crear prestamos"   => true,
+            "ver prestamos"   => true,
+        ];
+
+        foreach($permissions as $permission_name => $assign_to_maestro) {
+
+            $permission = Permission::create(['name' => $permission_name]);
+
+            $director->givePermissionTo($permission);
+
+            if ($assign_to_maestro) {
+                $maestro->givePermissionTo($permission);
+            }
+
+        }*/
 
 
 

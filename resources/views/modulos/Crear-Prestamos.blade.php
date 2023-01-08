@@ -15,9 +15,10 @@
 
 	<section class="content">
 		<div class="container-fluid">
+			@can('crear prestamos')
 			<div class="row">	
 				<div class="col-md-4"><br>
-
+					
 					<form method="post">
 						@csrf
 						<select class="form-control inpun-lg" id="select2" name="id_alumno" required="">
@@ -44,15 +45,18 @@
 						?>
 
 						<br><br>
-
+						
 						<button type="submit" class="btn btn-primary">Crear</button>
+						
 					</form>
 				</div>
-
+				@can('crear alumno')
 				<div class="col-md-4"><br>
 					<button class="btn btn-success" data-toggle="modal" data-target="#CrearAlumno">Añadir Alumno</button>
 				</div>
+				@endcan
 			</div>
+			@endcan
 
 				<div class="box">
 					<div class="box-body">
@@ -82,15 +86,19 @@
 
 								
 								<td>
+									@can('ver prestamos')
 									<a href="{{ url('Ver-Prestamo/'.$prestamo->id) }}">
 									<button class="btn btn-primary">Ver Prestamo</button>
-								</a>
+									</a>
+									@endcan
 								</td>
-
+								
 								<td>
+									@can('crear prestamos')
 									<a href="{{url('Prestamo/'.$prestamo->id)}}">
 										<button class="btn btn-primary">Añadir Prestamo</button>
 									</a>
+									@endcan
 
 								</td>
 							</tr>

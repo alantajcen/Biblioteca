@@ -78,7 +78,7 @@ class PrestamosController extends Controller
             //'costo'=>$datos["costo"]//
         ]);
 
-        return redirect('Prestamo/'.$id);
+        return redirect('Prestamo/'.$id)->with('libro_prestado', 'OK');;
 
     }
 
@@ -99,8 +99,8 @@ class PrestamosController extends Controller
         $datos = request();
 
         DB::table('prestamos')->where('id', $datos["id"])->update([
-            'estado'=>'Finalizado'
-
+            'estado'=>'Finalizado',
+            'fecha_fin'=> date('d/m/Y - H:i')
         ]);
 
         return redirect('Ver-Prestamos');

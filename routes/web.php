@@ -67,15 +67,26 @@ Route::get('EliminarLibro/{id}', [LibroController::class, 'destroy'])->middlewar
 
 
 
+Route::post('Crear-Prestamos', [AlumnosController::class, 'PrestamoAlumno'])->middleware(['can:crear alumnos']); // SE DUPLICA NOMBRE DE RUTA
 
 
-Route::post('Crear-Prestamos', [AlumnosController::class, 'PrestamoAlumno']);
-Route::get('Crear-Prestamos', [PrestamosController::class, 'create']);
-Route::post('Crear-Prestamos', [PrestamosController::class, 'store']);
-Route::get('Prestamo/{id}', [PrestamosController::class, 'venta']);
-Route::post('Prestamo/{id}', [PrestamosController::class, 'AñadirPrestamo']);
-Route::post('Quitar-Libro-Prestamo/{id}', [PrestamosController::class, 'QuitarLibroPrestamo']);
-Route::post('FinalizarPrestamo', [PrestamosController::class, 'FinalizarPrestamo']);
-Route::get('Ver-Prestamos', [PrestamosController::class, 'VerPrestamos']);
-Route::get('Ver-Prestamo/{id}', [PrestamosController::class, 'VerPrestamo']);
+
+
+
+Route::get('Crear-Prestamos', [PrestamosController::class, 'create'])->middleware(['can:crear prestamos']);
+Route::post('Crear-Prestamos', [PrestamosController::class, 'store'])->middleware(['can:crear prestamos']);
+Route::get('Ver-Prestamo/{id}', [PrestamosController::class, 'VerPrestamo'])->middleware(['can:ver prestamos']);
+
+
+
+
+Route::get('Prestamo/{id}', [PrestamosController::class, 'venta'])->middleware(['can:crear prestamos']);
+Route::post('Prestamo/{id}', [PrestamosController::class, 'AñadirPrestamo'])->middleware(['can:crear prestamos']);
+
+
+
+Route::post('Quitar-Libro-Prestamo/{id}', [PrestamosController::class, 'QuitarLibroPrestamo'])->middleware(['can:crear prestamos']);
+Route::post('FinalizarPrestamo', [PrestamosController::class, 'FinalizarPrestamo'])->middleware(['can:finalizar prestamos']);
+Route::get('Ver-Prestamos', [PrestamosController::class, 'VerPrestamos'])->middleware(['can:ver prestamos']);
+
 

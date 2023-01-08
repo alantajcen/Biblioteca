@@ -15,11 +15,12 @@
 		<div class="box">
 
 			<div class="box-header">
-
+				@can('listar autores')
 				<a href="{{ url('Autores') }}">
 					
 					<button class="btn btn-primary">Volver</button>
 				</a>
+				@endcan
 				
 			</div>
 			<br><br>
@@ -87,16 +88,17 @@
 
 
 									<td>
-								
+								@can('editar libro')
 								<a href="{{ url('EditarLibro/'.$libro->id) }}">
 
 
 								<button class="btn btn-success"><i class="fa fa-edit"></i></button>
 									
 								</a>
-
-
+								@endcan
+								@can('eliminar libros')
 								<button class="btn btn-danger EliminarLibro" Lid="{{ $libro->id }}"><i class="fa fa-trash"></i></button>
+								@endcan
 							</td>
 
 							</tr>

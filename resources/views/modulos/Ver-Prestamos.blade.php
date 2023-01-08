@@ -27,7 +27,8 @@
 							<th>No.</th>
 							<th>Alumno</th>
 							<th>Administrador</th>
-							<th>Fecha</th>
+							<th>Fecha prestamos</th>
+							<th>Fecha fin</th>
 							<th></th>
 						</tr>
 					</thead>
@@ -41,12 +42,13 @@
 								<td>{{ $prestamo->ALUMNO->nombre }}</td>
 								<td>{{ $prestamo->MAESTRO->name }}</td>
 								<td>{{ $prestamo->fecha }}</td>
-
+								<td>{{ $prestamo->fecha_fin }}</td>
 								<td>
-
-								<a href="{{ url('Ver-Prestamo/'.$prestamo->id) }}">
-									<button class="btn btn-primary">Ver</button>
-								</a>
+									@can('ver prestamos')
+									<a href="{{ url('Ver-Prestamo/'.$prestamo->id) }}">
+										<button class="btn btn-primary">Ver</button>
+									</a>
+									@endcan
 
 								</td>
 

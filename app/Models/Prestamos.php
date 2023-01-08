@@ -16,6 +16,7 @@ class Prestamos extends Model
     		'id_maestro',
     		'estado',
     		'fecha',
+			'fecha_fin',
     		'total'
 		];
 

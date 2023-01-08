@@ -24,11 +24,13 @@
 			<div class="col-md-6">
 				<div class="card card-secondary">
 					<div class="card-header">
+						
 						<h3 class="card-title">Agregar</h3>
-						    <div class="card-tools">
-	                			<button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse"><i class="fas fa-minus"></i>
-	                			</button>
-              				</div>
+						<div class="card-tools">
+							<button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse"><i class="fas fa-minus"></i>
+							</button>
+						</div>
+						
             		</div>
 
             		<div class="card-body">
@@ -38,7 +40,9 @@
 							<label for="inputEstimatedBudget">Ingresar nuevo genero</label>
 				
 							<input type="text" class="form-control" name="nombre" placeholder="Novela, Cientificos, Biog..."><br>
-							<button class="btn btn-primary" type="submit">Agregar +</button>
+							@can('crear generos')
+								<button class="btn btn-primary" type="submit">Agregar +</button>
+							@endcan
 						</form>
               			</div> 
 					</div>
@@ -72,11 +76,15 @@
 
 							
 							<div class="col">
+								@can('listar libros')
 								<a href="{{url('Genero-Libros/'.$genero->id) }}"><button type="button" class="btn btn-info">Ver Libros <i class="fas fa-eye"></i></button></a>
-
+								@endcan
+								@can('editar generos')
 								<button class="btn btn-success" type="submit"><i class="fa fa-edit"></i> </button>
-
+								@endcan
+								@can('eliminar generos')
 								<a href="{{ url('Genero-Eliminado/'.$genero->id) }}"><button class="btn btn-danger" type="button"><i class="fa fa-trash"></i></button></a>
+								@endcan
 							</div>
 							<br><br>
 

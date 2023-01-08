@@ -15,9 +15,9 @@
 		<div class="box">
 
 			<div class="box-header">
-
+				@can('crear libros')
 				<button class="btn btn-primary" data-toggle="modal" data-target="#AgregarLibro">Agregar Libro</button>
-				
+				@endcan
 			</div>
 			<br><br>
 
@@ -88,11 +88,13 @@
 
 
 								<td>
-									
+									@can('editar libros')
 									<a href="{{ url('EditarLibro/'.$libro->id) }}">
 									<button class="btn btn-success"><i class="fa fa-edit"></i></button></a>
-
+									@endcan
+									@can('eliminar libros')
 									<button class="btn btn-danger EliminarLibro" Lid="{{ $libro->id }}"><i class="fa fa-trash"></i></button>
+									@endcan
 								</td>
 
 							</tr>

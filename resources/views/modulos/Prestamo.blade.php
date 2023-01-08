@@ -19,8 +19,9 @@
 
 						<input type="hidden" name="id" value="{{ $prestamo->id }}">
 
+						@can('finalizar prestamos')
 						<button type="submit" class="btn btn-success">Finalizar</button>
-						
+						@endcan
 					</form>
 				</div>
 			</div><br><br>
@@ -81,9 +82,9 @@
 
 											<input type="hidden" name="stock" value="{{$libro->stock}}">
 
-
+											@can('crear prestamos')
 											<button type="submit" class="btn btn-success">Agregar</button>
-
+											@endcan
 										</form>
 									</td>
 									</tr>

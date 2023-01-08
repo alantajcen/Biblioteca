@@ -15,12 +15,13 @@
 		<div class="box">
 
 			<div class="box-body">
-
+				@can('crear autores')
 				<a href="{{ url('Agregar-Autor')}}">
 
 					<button class="btn btn-primary">Agregar Autor</button>
 					
-				</a>	
+				</a>
+				@endcan
 				<br><br>
 
 				<table class="table table-bordered table-striped table-hover DT1">
@@ -47,11 +48,12 @@
 								<td>{{ $autor->info }}</td>
 
 								<td>
-
+									@can('listar libros')
 										<a href="{{('Autor-Libros/'.$autor->id)}}">
 											<button class="btn btn-primary">..Libros..</button>
 										</a>
-
+									@endcan
+									@can('eliminar autores')
 									<form method="post" action="{{ url('Autor-Eliminado/'.$autor->id) }}">
 
 										@csrf
@@ -60,6 +62,7 @@
 										<button type="submit" class="btn btn-danger">Eliminar</button>
 										
 									</form>
+									@endcan
 								</td>
 
 							</tr>
