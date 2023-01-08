@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Alumnos;
 use Illuminate\Http\Request;
-use Illuminate\support\Facades\DB;
+use Illuminate\Support\Facades\DB;
+
 
 class AlumnosController extends Controller
 {
@@ -17,7 +18,7 @@ class AlumnosController extends Controller
     {
         $alumnos = Alumnos::all();
 
-        return view('modulos.Alumnos')->with('alumnos', $alumnos);
+        return view('modulos.alumnos')->with('alumnos', $alumnos);
     }
 
    
@@ -45,7 +46,7 @@ class AlumnosController extends Controller
 
         $alumnos = Alumnos::all();
 
-        return view('modulos.Alumnos', compact('alum', 'alumnos'));
+        return view('modulos.alumnos', compact('alum', 'alumnos'));
     }
 
     public function update(Request $request, $id)

@@ -58,16 +58,9 @@
 
   @include('modulos.cabecera')
 
-    @if(auth()->user()->rol == "Maestro")
-
-    @include('modulos.menuM')
-
-  @else
-
-
   @include('modulos.menu')
 
-@endif
+
 
   @yield('contenido')
   
@@ -328,7 +321,20 @@ $('[data-mask]').inputmask();
    )
 
 </script>
+<!--CREAR ALUMNO-->
 
+@elseif(session('libro_prestado') == 'OK')
+
+<script type="text/javascript">
+  
+  Swal.fire(
+
+   'Libro asignado al prestamo actual',
+   '',
+   'success'
+   )
+
+</script>
     <!--**EDITAR ALUMNO**-->
 
 

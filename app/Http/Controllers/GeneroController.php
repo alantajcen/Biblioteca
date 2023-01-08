@@ -17,7 +17,7 @@ class GeneroController extends Controller
     public function index()
     {
         $generos = Genero::all();
-        return view('modulos.Generos')->with('generos', $generos);
+        return view('modulos.generos')->with('generos', $generos);
     }
 
 
