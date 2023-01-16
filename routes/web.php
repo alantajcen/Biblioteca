@@ -48,7 +48,7 @@ Route::get('Alumno-Eliminado/{id}', [AlumnosController::class, 'destroy'])->midd
 
 Route::get('Generos', [GeneroController::class, 'index'])->middleware(['can:listar generos']);
 Route::post('Generos', [GeneroController::class, 'store'])->middleware(['can:crear generos']);
-Route::put('Actualizar-Genero/{genero}', [GeneroController::class, 'update'])->middleware(['can:actualizar generos']);
+Route::put('Actualizar-Genero/{genero}', [GeneroController::class, 'update'])->middleware(['can:editar generos']);
 Route::get('Genero-Eliminado/{id}', [GeneroController::class, 'destroy'])->middleware(['can:eliminar generos']);
 Route::get('Genero-Libros/{idGenero}', [GeneroController::class, 'GeneroLibros']); // generos
 
