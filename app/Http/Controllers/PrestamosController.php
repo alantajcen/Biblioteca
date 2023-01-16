@@ -35,6 +35,7 @@ class PrestamosController extends Controller
 
             'id_alumno'=>$datos["id_alumno"],
             'fecha'=>$datos["fecha"],
+            //'fecha_fin' => 'test',
             'estado'=>'Creado',
             //'total'=>'',
             'id_maestro'=>auth()->user()->id
@@ -96,6 +97,7 @@ class PrestamosController extends Controller
 
     public function FinalizarPrestamo()
     {
+        date_default_timezone_set('America/Mexico_City');
         $datos = request();
 
         DB::table('prestamos')->where('id', $datos["id"])->update([
